@@ -1,0 +1,35 @@
+{
+    "inbound": {
+        "port": 1080,
+        "listen": "127.0.0.1",
+        "protocol": "socks",
+        "settings": {
+            "udp": true
+        }
+    },
+    "outbound": {
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [
+                {
+                    "address": "APP.herokuapp.com",
+                    "port": 443,
+                    "users": [
+                        {
+                            "id": "UUID",
+                            "alterId": 64
+                        }
+                    ]
+                }
+            ]
+        },
+        "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "sockopt": {
+                "mark": 123
+            }
+        }
+    }
+}
+
